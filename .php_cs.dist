@@ -1,0 +1,8 @@
+<?php
+
+$config = new \DistortedFusion\PhpCsFixerConfig\Config();
+$config->getFinder()
+    ->in(__DIR__.'/src')
+    ->in(__DIR__.'/tests');
+
+return $config;

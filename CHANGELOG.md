@@ -1,6 +1,24 @@
 # Changelog
 
-All Notable changes to Laravel Domain Parser will be documented in this file
+All Notable changes to `Laravel Domain Parser` will be documented in this file
+
+## Next - TBD
+
+### Added
+
+- None
+
+### Fixed
+
+- None
+
+### Removed
+
+- None
+
+## 0.4.0 - 2020-09-08
+
+- Added support for Laravel 6.x and 7.x.
 
 ## 0.3.0 - 2018-12-13
 

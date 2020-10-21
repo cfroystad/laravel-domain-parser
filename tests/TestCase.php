@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Laravel Domain Parser Package (https://github.com/bakame-php/laravel-domain-parser).
- *
- * (c) Ignace Nyamagana Butera <nyamsprod@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace BakameTest\Laravel\Pdp;
 
 use Artisan;
@@ -54,7 +45,13 @@ abstract class TestCase extends Orchestra
         $app['config']->set('view.paths', [__DIR__.'/resources/views']);
     }
 
-    public function renderView(string $viewName, array $withParameters = []): string
+    /**
+     * @param string $viewName
+     * @param array  $withParameters
+     *
+     * @return array|string
+     */
+    public function renderView(string $viewName, array $withParameters = [])
     {
         return view($viewName)->with($withParameters)->render();
     }

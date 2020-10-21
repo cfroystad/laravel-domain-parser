@@ -1,27 +1,18 @@
 <?php
 
-/**
- * Laravel Domain Parser Package (https://github.com/bakame-php/laravel-domain-parser).
- *
- * (c) Ignace Nyamagana Butera <nyamsprod@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace BakameTest\Laravel\Pdp;
 
 use Bakame\Laravel\Pdp\MisconfiguredExtension;
+use Bakame\Laravel\Pdp\RulesFacade as Rules;
+use Bakame\Laravel\Pdp\TopLevelDomainsFacade as TopLevelDomains;
+use function date_create;
 use InvalidArgumentException;
 use Pdp\Cache as PdpCache;
 use Pdp\CurlHttpClient;
 use Pdp\Domain;
 use Pdp\Rules as PdpRules;
 use Pdp\TopLevelDomains as PdpTLD;
-use Rules;
-use TopLevelDomains;
 use TypeError;
-use function date_create;
 
 final class ServiceProviderTest extends TestCase
 {

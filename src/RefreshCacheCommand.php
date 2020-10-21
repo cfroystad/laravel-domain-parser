@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Laravel Domain Parser Package (https://github.com/bakame-php/laravel-domain-parser).
- *
- * (c) Ignace Nyamagana Butera <nyamsprod@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace Bakame\Laravel\Pdp;
@@ -38,7 +29,7 @@ final class RefreshCacheCommand extends Command
         $refreshTLDs = $this->option('tlds');
         $refreshRules = $this->option('rules');
 
-        if (!$refreshTLDs && !$refreshRules) {
+        if (! $refreshTLDs && ! $refreshRules) {
             $refreshRules = true;
             $refreshTLDs = true;
         }
@@ -46,7 +37,7 @@ final class RefreshCacheCommand extends Command
         try {
             if ($refreshRules) {
                 $this->info('Updating your Public Suffix List copy.');
-                if (!Adapter::refreshRules()) {
+                if (! Adapter::refreshRules()) {
                     $this->error('😓 😓 😓 Your Public Suffix List copy could not be updated. 😓 😓 😓');
                     $this->error('Please review your settings.');
 
@@ -56,7 +47,7 @@ final class RefreshCacheCommand extends Command
                 $this->info('💪 💪 💪 Your Public Suffix List copy is updated. 💪 💪 💪');
             }
 
-            if (!$refreshTLDs) {
+            if (! $refreshTLDs) {
                 return 0;
             }
 

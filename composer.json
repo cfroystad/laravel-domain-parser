@@ -1,15 +1,15 @@
 {
     "name": "bakame/laravel-domain-parser",
     "description": "Laravel package to integrate PHP Domain parser.",
-    "homepage": "https://github.com/bakame-php/laravel-domain-parser",
+    "homepage": "https://github.com/kevindierkx/laravel-domain-parser",
     "license": "MIT",
-    "keywords": [
-        "laravel",
-        "icann",
-        "iana",
-        "domain parser"
-    ],
+    "keywords": ["distortedfusion", "laravel", "icann", "iana", "domain parser"],
     "authors": [
+        {
+            "name": "Kevin Dierkx",
+            "email": "kevin@distortedfusion.com",
+            "homepage": "https://distortedfusion.com"
+        },
         {
             "name": "Ignace Nyamagana Butera",
             "homepage": "http://nyamsprod.com",
@@ -17,23 +17,24 @@
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/bakame-php/laravel-domain-parser/graphs/contributors"
+            "homepage": "https://github.com/kevindierkx/laravel-domain-parser/graphs/contributors"
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "jeremykendall/php-domain-parser": "^5.4",
-        "illuminate/support": "^5.5|^6.0",
-        "illuminate/config": "^5.5|^6.0"
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+        "illuminate/config": "^6.0 || ^7.0 || ^8.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.13",
-        "guzzlehttp/guzzle": "^6.3",
-        "orchestra/testbench": "^3.7|^4.0",
-        "phpstan/phpstan": "^0.10.6",
-        "phpstan/phpstan-phpunit": "^0.10.0",
-        "phpstan/phpstan-strict-rules": "^0.10.1",
-        "phpunit/phpunit": "7.4|^8.0"
+        "distortedfusion/php-cs-fixer-config": "^1.1",
+        "guzzlehttp/guzzle": "^6.3 || ^7.0",
+        "nunomaduro/larastan": "^0.6.1",
+        "orchestra/testbench": "^4.0 || ^5.0",
+        "phpstan/phpstan": "^0.12.0",
+        "phpstan/phpstan-phpunit": "^0.12.0",
+        "phpstan/phpstan-strict-rules": "^0.12.0",
+        "phpunit/phpunit": "^8.0 || ^9.0"
     },
     "autoload": {
         "psr-4": {
@@ -46,7 +47,8 @@
         }
     },
     "scripts": {
-        "phpcs": "php-cs-fixer fix -vv --diff --dry-run --allow-risky=yes",
+        "phpcs-fix" : "php-cs-fixer fix --using-cache=no --allow-risky=yes --ansi",
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes --ansi",
         "phpstan-src": "phpstan analyse -l max -c phpstan.src.neon src",
         "phpstan-tests": "phpstan analyse -l max -c phpstan.tests.neon tests",
         "phpstan": [
@@ -59,6 +61,11 @@
             "@phpstan",
             "@phpunit"
         ]
+    },
+    "scripts-descriptions": {
+        "phpcs": "Runs coding style test suite",
+        "phpunit": "Runs unit and function tests",
+        "test": "Runs all tests"
     },
     "suggest": {
         "curl": "To use the default HTTP client",

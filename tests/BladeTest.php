@@ -1,20 +1,14 @@
 <?php
 
-/**
- * Laravel Domain Parser Package (https://github.com/bakame-php/laravel-domain-parser).
- *
- * (c) Ignace Nyamagana Butera <nyamsprod@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace BakameTest\Laravel\Pdp;
 
 final class BladeTest extends TestCase
 {
     /**
      * @dataProvider isDomainNameProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testIsDomainName(string $domain, string $expected): void
     {
@@ -37,6 +31,9 @@ final class BladeTest extends TestCase
 
     /**
      * @dataProvider isKnownDomainNameProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testIsKnownDomainName(string $domain, string $expected): void
     {
@@ -59,6 +56,9 @@ final class BladeTest extends TestCase
 
     /**
      * @dataProvider isICANNDomainNameProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testIsICANNDomainName(string $domain, string $expected): void
     {
@@ -81,6 +81,9 @@ final class BladeTest extends TestCase
 
     /**
      * @dataProvider isPrivateDomainNameProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testIsPrivateDomainName(string $domain, string $expected): void
     {
@@ -103,6 +106,9 @@ final class BladeTest extends TestCase
 
     /**
      * @dataProvider isTopLevelDomainProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testIsTopLevelDomain(string $domain, string $expected): void
     {
@@ -125,6 +131,9 @@ final class BladeTest extends TestCase
 
     /**
      * @dataProvider endsWithTopLevelDomainProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testEndsWithTopLevelDomain(string $domain, string $expected): void
     {
@@ -151,6 +160,9 @@ final class BladeTest extends TestCase
 
     /**
      * @dataProvider domainConversionProvider
+     *
+     * @param string $domain
+     * @param string $expected
      */
     public function testDomainToUnicodeDirective(string $domain, string $expected): void
     {

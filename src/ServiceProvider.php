@@ -1,26 +1,17 @@
 <?php
 
-/**
- * Laravel Domain Parser Package (https://github.com/bakame-php/laravel-domain-parser).
- *
- * (c) Ignace Nyamagana Butera <nyamsprod@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace Bakame\Laravel\Pdp;
 
 use Closure;
+use function config_path;
+use function dirname;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Pdp\Rules;
 use Pdp\TopLevelDomains;
-use function config_path;
-use function dirname;
 
 final class ServiceProvider extends BaseServiceProvider
 {
